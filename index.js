@@ -18,13 +18,26 @@ app.get('/ping', (req, res) => {
 app.use(bodyParser.json());
 //app.use(cors());
 //const cors = require("cors");
+const allowedOrigins = [
+    "https://abdulgithub70.github.io/Expense_trac", // GitHub Pages URL
+  ];
+  
+  app.use(
+    cors({
+      origin: allowedOrigins,
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      credentials: true,
+    })
+  );
+  
+/*
 app.use(
   cors({
     origin: "https://abdulgithub70.github.io/Expense_trac", // Your GitHub Pages URL
     methods: ["GET", "POST", "PUT", "DELETE"], // Allow necessary HTTP methods
   })
 );
-
+*/
 app.use('/auth', AuthRouter);
 app.use('/products', ProductRouter);
 app.use('/expenses', ensureAuthenticated, ExpenseRouter)
