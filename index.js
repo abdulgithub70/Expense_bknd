@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 //const cors = require("cors");
 app.use(
   cors({
-    origin: "https://yourusername.github.io", // Your GitHub Pages URL
+    origin: "https://abdulgithub70.github.io/Expense_trac", // Your GitHub Pages URL
     methods: ["GET", "POST", "PUT", "DELETE"], // Allow necessary HTTP methods
   })
 );
