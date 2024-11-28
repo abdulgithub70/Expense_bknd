@@ -16,7 +16,15 @@ app.get('/ping', (req, res) => {
 });
 
 app.use(bodyParser.json());
-app.use(cors());
+//app.use(cors());
+//const cors = require("cors");
+app.use(
+  cors({
+    origin: "https://yourusername.github.io", // Your GitHub Pages URL
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allow necessary HTTP methods
+  })
+);
+
 app.use('/auth', AuthRouter);
 app.use('/products', ProductRouter);
 app.use('/expenses', ensureAuthenticated, ExpenseRouter)
