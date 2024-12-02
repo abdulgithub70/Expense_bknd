@@ -36,7 +36,7 @@ app.use(
     origin: allowedOrigins,  // Allow requests only from your GitHub Pages URL
     methods: ["GET", "POST", "PUT", "DELETE"],  // Allow specific HTTP methods
     credentials: true,  // Allow sending cookies with requests (if needed)
-    preflightContinue: true,  // Allow preflight requests to pass
+    preflightContinue: false,  // Allow preflight requests to pass
     optionsSuccessStatus: 204,  // Fix for older browsers that may not handle 200 status on preflight
   })
 );
